@@ -24,6 +24,7 @@ div {
 	box-shadow: 1vh 0 3vh 2vh rgba(255, 85, 0, 0), 
        inset -1vh 0 3vh 2vh rgb(0, 26, 255),
              -1vh -1vh 35vh 0 rgba(255, 102, 0, 0);
+	animation: pulse 3s infinite;
 }
 
 div:before, div:after {
@@ -40,4 +41,26 @@ div:before {
   box-shadow: #f4eb42 0 0 2vh 2vh,
               #f4eb42 2vh 4vh 2vh 0.3vh;
 			  visibility: hidden;
+}
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 1vh 0 3vh 2vh rgba(255, 85, 0, 0), 
+		inset -1vh 0 3vh 2vh rgba(255, 0, 0, 0),
+			  -1vh -1vh 35vh 0 rgba(255, 102, 0, 0);
+	}
+
+	50% {
+		transform: scale(1);
+		box-shadow: 1vh 0 3vh 2vh rgba(255, 85, 0, 0), 
+		inset -1vh 0 3vh 2vh rgba(255, 0, 0, 0.993),
+			  -1vh -1vh 35vh 0 rgba(255, 102, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 1vh 0 3vh 2vh rgba(255, 85, 0, 0), 
+		inset -1vh 0 3vh 2vh rgba(255, 0, 0, 0),
+			  -1vh -1vh 35vh 0 rgba(255, 102, 0, 0);
+	}
 }
